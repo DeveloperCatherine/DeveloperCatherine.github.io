@@ -1,6 +1,6 @@
 {
-  "name": "yueying-catherine-tang-portfolio",
-  "description": "A simple starter to get up and developing quickly with Gatsby",
+  "name": "catherine-portfolio",
+  "description": "Yueying Catherine Tang's portfolio site. Built with Gatsby.",
   "version": "0.0.1",
   "author": "Yueying Catherine Tang <yueying.catherine@gmail.com>",
   "private": true,
