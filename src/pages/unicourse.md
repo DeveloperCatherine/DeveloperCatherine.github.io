@@ -1,7 +1,7 @@
 ---
 title: "UniCourse"
 subtitle: "Multi-platform Education System Chinese National Undergraduate Innovation Project"
-roles: {"Team Leader", "Product Designer", "Backend Developer"}
+roles: "Team Leader, Product Designer, Backend Developer"
 ---
 
 UniCourse is an Education System that connects teachers and students through the Web application and the Android App. It is designed to solve the problem that conventional ways of communication between teachers and university students such as emails and office hours are not satisfying in terms of efficiency.
