@@ -13,6 +13,9 @@ const ProjectDetailPage = ({data}) => {
             <div>
                 <h1>{project.frontmatter.title}</h1>
                 <h3>{project.frontmatter.subtitle}</h3>
+                <div>
+                    {project.frontmatter.roles}
+                </div>
                 <div dangerouslySetInnerHTML={{ __html: project.html }} />
             </div>
         </Layout>
@@ -28,6 +31,7 @@ export const query = graphql `
             frontmatter {
                 title
                 subtitle
+                roles
             }
         }
     }
