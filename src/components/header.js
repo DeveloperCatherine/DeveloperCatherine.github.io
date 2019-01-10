@@ -1,34 +1,31 @@
 import { Link } from 'gatsby'
 import PropTypes from 'prop-types'
 import React from 'react'
+import styled from 'styled-components'
+
+const TallHeader = styled.section`
+  marginBottom: 1.45rem;
+  border-bottom: 1px solid black;
+`;
+
+const NavWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 1.45rem 1.0875rem;
+`;
 
 const Header = ({ siteTitle }) => (
-  <div
-    style={{
-      background: `rebeccapurple`,
-      marginBottom: `1.45rem`,
-    }}
-  >
-    <div
-      style={{
-        margin: `0 auto`,
-        maxWidth: 960,
-        padding: `1.45rem 1.0875rem`,
-      }}
-    >
+  <TallHeader>
+    <NavWrapper>
       <h1 style={{ margin: 0 }}>
         <Link
           to="/"
-          style={{
-            color: `white`,
-            textDecoration: `none`,
-          }}
         >
           {siteTitle}
         </Link>
       </h1>
-    </div>
-  </div>
+    </NavWrapper>
+  </TallHeader>
 )
 
 Header.propTypes = {

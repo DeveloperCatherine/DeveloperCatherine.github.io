@@ -24,7 +24,7 @@ const typography = new Typography({
     boldWeight: 700,
     overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
         a: {
-            color: '#d65947',
+            color: '#FE840E',
             textDecoration: 'none',
         },
         'a:hover,a:active': {
@@ -38,7 +38,7 @@ const typography = new Typography({
             color: gray(41),
             paddingLeft: rhythm(13 / 16),
             marginLeft: 0,
-            borderLeft: `${rhythm(3 / 16)} solid #fca206`,
+            borderLeft: `${rhythm(3 / 16)} solid #FEB30E`,
         },
         'blockquote > :last-child': {
             marginBottom: 0,

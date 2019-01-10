@@ -1,9 +1,29 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
-
+import styled from 'styled-components'
 import Header from './header'
 // import './layout.css'
+
+const PageWrapper = styled.section`
+  padding: 0 20px 1.45rem;
+`;
+
+const ContentWrapper = styled.div`
+  margin: 0 auto;
+  max-width: 960px;
+  padding: 0px 1.0875rem 1.45rem;
+`;
+
+const Footer = styled.footer`
+  border-top: 1px solid black;
+  padding-top: 1rem;
+  text-align: center;
+`;
+
+const Copyright = styled.div`
+  color: #999999;
+`;
 
 const Layout = ({ children }) => (
   <StaticQuery
@@ -18,24 +38,16 @@ const Layout = ({ children }) => (
       }
     `}
     render={data => (
-      <>
+      <PageWrapper>
         <Header siteTitle={data.site.siteMetadata.title} />
-        <div
-          style={{
-            margin: `0 auto`,
-            maxWidth: 960,
-            padding: `0px 1.0875rem 1.45rem`,
-            paddingTop: 0,
-          }}
-        >
+        <ContentWrapper>
           {children}
-          <footer>
-            © {new Date().getFullYear()} ✨ Design and Code by
-            {` `}
-            <a href={data.site.siteMetadata.url}>Yueying Catherine Tang</a>
-          </footer>
-        </div>
-      </>
+          <Footer>
+            Design and Code by Yueying Catherine Tang
+            <Copyright>© {new Date().getFullYear()}</Copyright>
+          </Footer>
+        </ContentWrapper>
+      </PageWrapper>
     )}
   />
 )
