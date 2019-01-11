@@ -6,7 +6,10 @@ import Header from './header'
 // import './layout.css'
 
 const PageWrapper = styled.section`
-  padding: 0 20px 1.45rem;
+  @media screen and (max-width: 960px) {
+    padding: 0 20px 1.45rem;
+  };
+  padding: 0 40px 1.45rem;
 `;
 
 const ContentWrapper = styled.div`
@@ -17,36 +20,39 @@ const ContentWrapper = styled.div`
 
 const Footer = styled.footer`
   border-top: 1px solid black;
-  padding-top: 1rem;
+  padding-top: 0.5rem;
   text-align: center;
 `;
 
 const Copyright = styled.div`
-  color: #999999;
+  color: #333333;
+`;
+
+const TextLink = styled.a`
+  color: #FE840E;
 `;
 
 const Layout = ({ children }) => (
   <StaticQuery
     query={graphql`
-      query SiteTitleQuery {
+      query SiteDataQuery {
         site {
           siteMetadata {
-            title
-            url
+            author
+            repository
           }
         }
       }
     `}
     render={data => (
       <PageWrapper>
-        <Header siteTitle={data.site.siteMetadata.title} />
+        <Header />
         <ContentWrapper>
           {children}
-          <Footer>
-            Design and Code by Yueying Catherine Tang
-            <Copyright>© {new Date().getFullYear()}</Copyright>
-          </Footer>
         </ContentWrapper>
+        <Footer>
+          <Copyright>© {new Date().getFullYear()} Design & Code by {data.site.siteMetadata.author}. <TextLink href={data.site.siteMetadata.repository} >Github Repository</TextLink>.</Copyright>
+        </Footer>
       </PageWrapper>
     )}
   />

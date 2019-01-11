@@ -24,11 +24,15 @@ const typography = new Typography({
     boldWeight: 700,
     overrideStyles: ({ adjustFontSizeTo, scale, rhythm }, options) => ({
         a: {
-            color: '#FE840E',
+            color: options.headerColor,
             textDecoration: 'none',
+            cursor: 'pointer',
         },
         'a:hover,a:active': {
             color: options.bodyColor,
+        },
+        'img,div,span,section': {
+            margin: 0,
         },
         'h1,h2,h3,h4,h5,h6': {
             marginTop: rhythm(2),

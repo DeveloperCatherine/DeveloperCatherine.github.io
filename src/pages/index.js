@@ -8,9 +8,10 @@ import SEO from '../components/seo'
 const IndexPage = () => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
-    <h1>Hi there</h1>
-    <p>Welcome to Catherine's portfolio.</p>
-    <p>She's going to build something great.</p>
+    <div style={{ textAlign: `center`}}>
+      <h1>Hi, nice to meet you</h1>
+      <p>This is my portfolio, an ongoing project that I recently started working on.</p>
+    </div>
     <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
       <Image />
     </div>

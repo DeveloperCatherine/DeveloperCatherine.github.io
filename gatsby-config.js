@@ -1,9 +1,11 @@
 module.exports = {
   siteMetadata: {
     title: `Yueying Catherine Tang`,
-    description: `Hi I'm Yueying Catherine Tang. Welcome to my portfolio :)`,
-    author: `@yueyingcatherine`,
-    url: `http://yueyingcatherine.com/`
+    description: `Hi, nice to meet you. I'm Catherine, a UX designer, Product Manager, and Web Developer. Check out my portfolio to know more.`,
+    author: `Yueying Tang`,
+    email: `yueying.catherine@gmail.com`,
+    domain: `http://yueyingcatherine.com/`,
+    repository: 'https://github.com/DeveloperCatherine/DeveloperCatherine.github.io',
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
