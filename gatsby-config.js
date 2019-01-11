@@ -30,10 +30,10 @@ module.exports = {
         name: `Yueying Catherine Tang's Porfolio`,
         short_name: `Catherine`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#FFFFFF`,
+        theme_color: `#FE840E`,
         display: `minimal-ui`,
-        icon: `src/images/gatsby-icon.png`, // This path is relative to the root of the site.
+        icon: `src/images/logo-icon.png`, // This path is relative to the root of the site.
       },
     },
     {
