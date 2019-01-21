@@ -1,29 +1,27 @@
 import React from 'react'
 
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, Link } from "gatsby"
 import Img from "gatsby-image"
-import { Link } from 'gatsby'
 
 // import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const HeaderWrapper = styled.section`
   border-bottom: 1px solid black;
-  padding: 1.0875rem 0;
+  padding: 1.0875rem;
 `;
 
 const HomeButton = styled.div`
-  margin-left: 1.0875rem;
-  height: 98px;
+  margin: 0.546rem 0 auto;
   display: inline-block;
   float: none;
+  height: 84px;
 `;
 
 const SiteNav = styled.nav`
-  margin: 0 auto;
+  margin: 0.182rem 0 auto;
   display: inline-block;
   float: right;
-  margin-right: 1.0875rem;
 `;
 
 const NavList = styled.ul`
@@ -33,7 +31,7 @@ const NavList = styled.ul`
 
 const NavButton = styled.li`
   display: block;
-  margin: 0.3rem 0 0 0;
+  margin: 0.2rem 0 0.2rem 0;
   text-align: right;
   font-weight: bold;
 `;
@@ -46,9 +44,9 @@ const Header = () => (
       <StaticQuery
         query={graphql`
           query {
-            file (relativePath: {eq: "logo@2x.png"}) {
+            file (relativePath: {eq: "full-logo@2x.png"}) {
               childImageSharp {
-                fixed(width: 168, height: 98) {
+                fixed(width: 140, height: 84) {
                   ...GatsbyImageSharpFixed
                 }
               }

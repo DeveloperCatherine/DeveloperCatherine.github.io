@@ -7,14 +7,13 @@ import Layout from '../components/layout'
 import IntroImage from '../components/intro-image'
 import SEO from '../components/seo'
 
+const IntroWrapper = styled.section`
+  margin-bottom: calc(1.6875rem * 2 - 1rem);
+`;
+
 const IntroGreeting = styled.div`
   text-align: center;
 `;
-
-// const IntroBlock = styled.span`
-//   display: block;
-//   float: right;
-// `;
 
 const RoleList = styled.ul`
   list-style: none;
@@ -34,23 +33,39 @@ const LargeText = styled.p`
   margin-bottom: calc(1.6875rem / 2);
 `;
 
+function DayPart (props) {
+  switch (true) {
+    case (props.hour < 6):
+      return "evening";
+    case (props.hour < 12):
+      return "morning";
+    case (props.hour < 18):
+      return "afternoon";
+    case (props.hour <= 24):
+      return "evening";
+    default:
+      return "day";
+  }
+}
+
 const Intro = () => (
-  <Container>
+  <IntroWrapper>
+    <Container>
       <Row align="center">
         <Col md={12}>
           <IntroGreeting>
-            <h1>Hi, nice to meet you</h1>
+            <h1>// good <DayPart hour={new Date().getHours()}/>.</h1>
             <p>This is my portfolio, an ongoing project that I recently started working on.</p>
           </IntroGreeting>
         </Col>
       </Row>
       <Row align="center">
         <Col md={5}>
-            <ScreenClassRender render={screenClass => (
-              <div style={{ textAlign: ['lg', 'xl', 'md'].includes(screenClass) ? 'right' : 'center' }} >
-                <LargeText>I'm Catherine, a</LargeText>
-              </div>
-            )} />
+          <ScreenClassRender render={screenClass => (
+            <div style={{ textAlign: ['lg', 'xl', 'md'].includes(screenClass) ? 'right' : 'center' }} >
+              <LargeText>I'm Catherine, a</LargeText>
+            </div>
+          )} />
         </Col>
         <Col md={7}>
           <Row align="center">
@@ -76,33 +91,34 @@ const Intro = () => (
         </Col>
       </Row>
     </Container>
+  </IntroWrapper>
 )
 
-// const Guide = () => (
-//   <Container>
-//     <Row debug>
-//       <Col debug md={3}>
-//       1
-//       </Col>
-//       <Col debug md={9}>
-//       2
-//       </Col>
-//     </Row>
-//     <Row debug>
-//         <ScreenClassRender render={screenClass => (
-//           <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
-//             Screen class: {screenClass}
-//           </p>
-//         )} />
-//       </Row>
-//   </Container>
-// )
+const Guide = () => (
+  <Container>
+    <Row debug>
+      <Col debug md={3}>
+      1
+      </Col>
+      <Col debug md={9}>
+      2
+      </Col>
+    </Row>
+    <Row debug>
+        <ScreenClassRender render={screenClass => (
+          <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+            Screen class: {screenClass}
+          </p>
+        )} />
+      </Row>
+  </Container>
+)
 
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
     <Intro />
-    {/* <Guide /> */}
+    <Guide />
   </Layout>
 )
 
