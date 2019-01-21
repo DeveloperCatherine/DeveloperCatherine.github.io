@@ -4,18 +4,17 @@ import { StaticQuery, graphql } from "gatsby"
 import Img from "gatsby-image"
 import { Link } from 'gatsby'
 
-import PropTypes from 'prop-types'
+// import PropTypes from 'prop-types'
 import styled from 'styled-components'
 
 const HeaderWrapper = styled.section`
-  margin: 0 0 1.45rem;
   border-bottom: 1px solid black;
   padding: 1.0875rem 0;
 `;
 
 const HomeButton = styled.div`
   margin-left: 1.0875rem;
-  height: inherit;
+  height: 98px;
   display: inline-block;
   float: none;
 `;
@@ -41,7 +40,9 @@ const NavButton = styled.li`
 
 const Header = () => (
   <HeaderWrapper>
-    <HomeButton><Link to="/">
+    <HomeButton><Link to="/" activeStyle={{
+            fontSize: "0",
+          }}>
       <StaticQuery
         query={graphql`
           query {
@@ -66,12 +67,12 @@ const Header = () => (
   </HeaderWrapper>
 )
 
-Header.propTypes = {
-  siteTitle: PropTypes.string,
-}
+// Header.propTypes = {
+//   siteTitle: PropTypes.string,
+// }
 
-Header.defaultProps = {
-  siteTitle: ``,
-}
+// Header.defaultProps = {
+//   siteTitle: ``,
+// }
 
 export default Header
