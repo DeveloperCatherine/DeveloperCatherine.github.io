@@ -1,11 +1,15 @@
 import React from 'react'
-// import { Link } from 'gatsby'
 import styled from 'styled-components'
 import {Container, Row, Col, ScreenClassRender, Hidden} from 'react-grid-system'
 
 import Layout from '../components/layout'
-import IntroImage from '../components/intro-image'
+import ProfileImage from '../components/profile-image'
+import ArrowImage from '../components/arrow-image'
 import SEO from '../components/seo'
+
+/**
+ * Intro
+ */
 
 const IntroWrapper = styled.section`
   margin-bottom: calc(1.6875rem * 2 - 1rem);
@@ -54,7 +58,7 @@ const Intro = () => (
       <Row align="center">
         <Col md={12}>
           <IntroGreeting>
-            <h1>// good <DayPart hour={new Date().getHours()}/>.</h1>
+            <h1>{'// good'} <DayPart hour={new Date().getHours()}/>.</h1>
             <p>This is my portfolio, an ongoing project that I recently started working on.</p>
           </IntroGreeting>
         </Col>
@@ -85,7 +89,7 @@ const Intro = () => (
               </RoleList>
             </Col>
             <Col md={5} lg={4}>
-              <Hidden xs sm><IntroImage style={{ maxHeight: '280px' }}/></Hidden>
+              <Hidden xs sm><ProfileImage /></Hidden>
             </Col>
           </Row>
         </Col>
@@ -94,31 +98,75 @@ const Intro = () => (
   </IntroWrapper>
 )
 
-const Guide = () => (
+
+/**
+ * Transit
+ */
+
+const ArrowImageWrapper = styled.div`
+  margin: ${props => (props.noTopMargin ? '0 0 1.6875rem' : '1rem')};
+  display: flex;
+  justify-content: center;
+`;
+
+const TransitColWrapper = styled.div`
+  border-right: 1px solid black;
+`;
+
+const TransitRowWrapper = styled.div`
+  border-top: 1px solid black;
+`;
+
+const TransitText = styled.div`
+  padding: 1.6875rem 0;
+  text-align: center;
+  line-height: 2.0675rem;
+`;
+
+const Transit = () => (
   <Container>
-    <Row debug>
-      <Col debug md={3}>
-      1
+    <Row align="center" nogutter component={TransitRowWrapper}>
+      <Hidden xs sm><Col md={3} sm={9} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper}>
+        <ArrowImageWrapper>
+          <ArrowImage />
+        </ArrowImageWrapper>
+      </Col></Hidden>
+      <Col md={8} sm={12}>
+        <TransitText>
+          <b>Sounds a bit confusing?</b>
+          <br />
+          Let me tell you how I got those roles.
+        </TransitText>
       </Col>
-      <Col debug md={9}>
-      2
-      </Col>
+      <Hidden md lg xl><Col>
+        <ArrowImageWrapper noTopMargin>
+          <ArrowImage />
+        </ArrowImageWrapper>
+      </Col></Hidden>
     </Row>
-    <Row debug>
-        <ScreenClassRender render={screenClass => (
-          <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
-            Screen class: {screenClass}
-          </p>
-        )} />
-      </Row>
+    <Row align="center" nogutter component={TransitRowWrapper}>
+      <Hidden xs sm>
+        <Col md={3} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper} style={{ height: '60px'}}>
+        </Col>
+        <Col md={7} style={{ height: '60px'}}>
+        </Col>
+      </Hidden>
+    </Row>
+    {/* <Row>
+      <ScreenClassRender render={screenClass => (
+        <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
+          Screen class: {screenClass}
+        </p>
+      )} />
+    </Row> */}
   </Container>
 )
 
 const IndexPage = ({data}) => (
   <Layout>
-    <SEO title="Home" keywords={[`gatsby`, `application`, `react`]} />
+    <SEO title="Portfolio" keywords={[`gatsby`, `application`, `react`]} />
     <Intro />
-    <Guide />
+    <Transit />
   </Layout>
 )
 
