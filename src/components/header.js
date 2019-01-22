@@ -36,6 +36,16 @@ const NavButton = styled.li`
   font-weight: bold;
 `;
 
+const NavLink = styled(Link)`
+  :hover {
+    :before {
+      color: #FEB30E;
+      content: "// ";
+    }
+    font-size: 98%;
+  }
+`;
+
 const Header = () => (
   <HeaderWrapper>
     <HomeButton><Link to="/" activeStyle={{
@@ -57,9 +67,9 @@ const Header = () => (
     </Link></HomeButton>
     <SiteNav>
       <NavList>
-        <NavButton><Link to="/#about">About</Link></NavButton>
-        <NavButton><Link to="/#projects">Work</Link></NavButton>
-        <NavButton><Link to="/#contact">Contact</Link></NavButton>
+        <NavButton><NavLink to="/#about">About</NavLink></NavButton>
+        <NavButton><NavLink to="/#projects">Work</NavLink></NavButton>
+        <NavButton><NavLink to="/#contact">Contact</NavLink></NavButton>
       </NavList>
     </SiteNav>
   </HeaderWrapper>
