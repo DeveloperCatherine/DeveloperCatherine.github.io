@@ -8,7 +8,7 @@ import styled from 'styled-components'
 
 const HeaderWrapper = styled.section`
   border-bottom: 1px solid black;
-  padding: 1.0875rem;
+  padding: 0.54rem 1.0875rem;
 `;
 
 const HomeButton = styled.div`
