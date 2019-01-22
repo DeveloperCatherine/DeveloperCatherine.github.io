@@ -30,6 +30,9 @@ const Copyright = styled.div`
 
 const TextLink = styled.a`
   color: #FE840E;
+  :hover {
+    color: #FF9D40;
+  }
 `;
 
 const Layout = ({ children }) => (
