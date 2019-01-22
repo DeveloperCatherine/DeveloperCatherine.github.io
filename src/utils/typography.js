@@ -29,7 +29,7 @@ const typography = new Typography({
             cursor: 'pointer',
         },
         'a:hover,a:active': {
-            color: options.bodyColor,
+            color: options.headerColor,
         },
         'img,div,span,section': {
             margin: 0,

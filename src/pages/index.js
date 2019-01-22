@@ -26,15 +26,18 @@ const RoleList = styled.ul`
 `;
 
 const RoleItem = styled.li`
-  font-size: 1.6875rem;
+  font-size: ${props => (props.inactive ? '1.2rem' : '1.6875rem')};
   text-align: center;
   font-weight: bold;
-  color: #FFFFFF;
+  letter-spacing: 0.05rem;
+  ${props => (props.inactive ? '' : 'text-decoration: rgba(255, 255, 255, 0.45) double underline;')}
+  color: ${props => (props.inactive ? 'rgba(255, 255, 255, 0.8)' : '#FFFFFF')};
 `;
 
 const LargeText = styled.p`
   font-size: 1.6875rem;
   margin-bottom: calc(1.6875rem / 2);
+  letter-spacing: 0.05rem;
 `;
 
 function DayPart (props) {
@@ -72,7 +75,7 @@ const Intro = () => (
           )} />
         </Col>
         <Col md={7}>
-          <Row align="center">
+          <Row align="center" nogutter>
             <ScreenClassRender render={screenClass => (
               <div style={{ left: '1rem', top: ['xs', 'sm'].includes(screenClass) ? '1rem' : '2.5rem', backgroundColor: '#FEB30E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
               </div>
@@ -83,9 +86,9 @@ const Intro = () => (
             )} />
             <Col md={7} lg={6}>
               <RoleList>
-                <RoleItem>UX Designer</RoleItem>
-                <RoleItem>PM</RoleItem>
-                <RoleItem>Web Developer</RoleItem>
+                <RoleItem inactive>UX Designer</RoleItem>
+                <RoleItem>Product Maker</RoleItem>
+                <RoleItem inactive>Web Developer</RoleItem>
               </RoleList>
             </Col>
             <Col md={5} lg={4}>
@@ -135,7 +138,7 @@ const Transit = () => (
         <TransitText>
           <b>Sounds a bit confusing?</b>
           <br />
-          Let me tell you how I got those roles.
+          Let me tell you how I fit those roles.
         </TransitText>
       </Col>
       <Hidden md lg xl><Col>
@@ -151,6 +154,14 @@ const Transit = () => (
         <Col md={7} style={{ height: '60px'}}>
         </Col>
       </Hidden>
+    </Row>
+    <Row>
+      <Col><div style={{
+          display: 'flex',
+          justifyContent: 'center'
+      }}>
+        <h4>To be continued ...</h4>
+      </div></Col>
     </Row>
     {/* <Row>
       <ScreenClassRender render={screenClass => (
