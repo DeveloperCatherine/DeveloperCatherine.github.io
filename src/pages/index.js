@@ -1,10 +1,11 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Container, Row, Col, ScreenClassRender, Hidden} from 'react-grid-system'
+import {Container, Row, Col, ScreenClassRender, Hidden, Visible} from 'react-grid-system'
 
 import Layout from '../components/layout'
 import ProfileImage from '../components/profile-image'
 import ArrowImage from '../components/arrow-image'
+import SurfingImage from '../components/surfing-image'
 import SEO from '../components/seo'
 
 /**
@@ -57,49 +58,47 @@ function DayPart (props) {
 }
 
 const Intro = () => (
-  <IntroWrapper>
-    <Container>
-      <Row align="center">
-        <Col md={12}>
-          <IntroGreeting>
-            <h1>{'// good'} <DayPart hour={new Date().getHours()}/>.</h1>
-            <p>This is my portfolio, an ongoing project that I recently started working on.</p>
-          </IntroGreeting>
-        </Col>
-      </Row>
-      <Row align="center">
-        <Col md={5}>
+  <Container component={IntroWrapper}>
+    <Row align="center">
+      <Col md={12}>
+        <IntroGreeting>
+          <h1>{'// good'} <DayPart hour={new Date().getHours()}/>.</h1>
+          <p>This is my portfolio, an ongoing project that I recently started working on.</p>
+        </IntroGreeting>
+      </Col>
+    </Row>
+    <Row align="center">
+      <Col md={5}>
+        <ScreenClassRender render={screenClass => (
+          <div style={{ textAlign: ['lg', 'xl', 'md'].includes(screenClass) ? 'right' : 'center' }} >
+            <LargeText>I'm Catherine, a</LargeText>
+          </div>
+        )} />
+      </Col>
+      <Col md={7}>
+        <Row align="center" nogutter>
           <ScreenClassRender render={screenClass => (
-            <div style={{ textAlign: ['lg', 'xl', 'md'].includes(screenClass) ? 'right' : 'center' }} >
-              <LargeText>I'm Catherine, a</LargeText>
+            <div style={{ left: '1rem', top: ['xs', 'sm'].includes(screenClass) ? '1rem' : '2.5rem', backgroundColor: '#FEB30E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
             </div>
           )} />
-        </Col>
-        <Col md={7}>
-          <Row align="center" nogutter>
-            <ScreenClassRender render={screenClass => (
-              <div style={{ left: '1rem', top: ['xs', 'sm'].includes(screenClass) ? '1rem' : '2.5rem', backgroundColor: '#FEB30E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
-              </div>
-            )} />
-            <ScreenClassRender render={screenClass => (
-              <div style={{ left: '0rem', top: ['xs', 'sm'].includes(screenClass) ? '0' : '1.5rem', backgroundColor: '#FE840E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
-              </div>
-            )} />
-            <Col md={7} lg={6}>
-              <RoleList>
-                <RoleItem inactive>UX Designer</RoleItem>
-                <RoleItem>Product Maker</RoleItem>
-                <RoleItem inactive>Web Developer</RoleItem>
-              </RoleList>
-            </Col>
-            <Col md={5} lg={4}>
-              <Hidden xs sm><ProfileImage /></Hidden>
-            </Col>
-          </Row>
-        </Col>
-      </Row>
-    </Container>
-  </IntroWrapper>
+          <ScreenClassRender render={screenClass => (
+            <div style={{ left: '0rem', top: ['xs', 'sm'].includes(screenClass) ? '0' : '1.5rem', backgroundColor: '#FE840E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
+            </div>
+          )} />
+          <Col md={7} lg={6}>
+            <RoleList>
+              <RoleItem inactive>UX Designer</RoleItem>
+              <RoleItem>Product Maker</RoleItem>
+              <RoleItem inactive>Web Developer</RoleItem>
+            </RoleList>
+          </Col>
+          <Col md={5} lg={4}>
+            <Hidden xs sm><ProfileImage /></Hidden>
+          </Col>
+        </Row>
+      </Col>
+    </Row>
+  </Container>
 )
 
 
@@ -151,27 +150,99 @@ const Transit = () => (
     </Row>
     <Row align="center" nogutter component={TransitRowWrapper}>
       <Hidden xs sm>
-        <Col md={3} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper} style={{ height: '60px'}}>
+        <Col md={3} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper} style={{ height: '3.875rem'}}>
         </Col>
-        <Col md={7} style={{ height: '60px'}}>
+        <Col md={7} style={{ height: '3.875rem'}}>
         </Col>
       </Hidden>
     </Row>
-    <Row>
+    {/* <Row>
       <Col><div style={{
           display: 'flex',
           justifyContent: 'center'
       }}>
         <h4>To be continued ...</h4>
       </div></Col>
+    </Row> */}
+  </Container>
+)
+
+/**
+ * About Section in Index Page
+ * 
+ */
+
+const TitleWrapper = styled.div`
+  padding-top: 3rem;
+  padding-bottom: 1.6875rem
+`;
+
+const LargeNumber = styled.span`
+  font-size: 6rem;
+  color: #E5E5E5;
+  position: absolute;
+  padding-right: 6rem;
+`;
+
+const Title = styled.h1`
+  display: flex;
+  justify-content: center;
+  margin: 2rem 0 2rem 4rem;
+`;
+
+const LargeQuote = styled.h1`
+  font-size: ${props => (props.smallScreen ? '2.375rem' : '3.375rem')};
+  margin: ${props => (props.smallScreen ? '1rem 1rem 1.6875rem' : '1.6875rem 2.375rem 2.375rem')};
+  color: #FFFFFF;
+  word-break: normal;
+  line-height: 1.2;
+`;
+
+const QuoteColWrapper = styled.div`
+  background-color: #FE840E;
+  min-width: 277px;
+`;
+
+const SurfingImageWrapper = styled.div`
+  position: absolute;
+  width: 70%;
+  left: 30%;
+`;
+
+const About = () => (
+  <Container>
+    <Row justify="center" align="center" component={TitleWrapper}>
+      <LargeNumber>01.</LargeNumber>
+      <Col>
+        <Title>my story</Title>
+      </Col>
     </Row>
-    {/* <Row>
+    <Row debug align="center" justify="center">
+      <Hidden xs sm>
+        <SurfingImageWrapper>
+          <SurfingImage />
+        </SurfingImageWrapper>
+      </Hidden>
+      <Col xs={9} sm={9} md={6} lg={6} xl={6} pull={{ md: 3, lg: 3, xl: 3 }} component={QuoteColWrapper}>
+        <Visible xs sm md>
+          <LargeQuote smallScreen>
+            a new adventure has started
+          </LargeQuote>
+        </Visible>
+        <Visible lg xl>
+          <LargeQuote>
+            a new adventure has started
+          </LargeQuote>
+        </Visible>
+      </Col>
+    </Row>
+    <Row>
       <ScreenClassRender render={screenClass => (
         <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
           Screen class: {screenClass}
         </p>
       )} />
-    </Row> */}
+    </Row>
   </Container>
 )
 
@@ -180,11 +251,13 @@ const Transit = () => (
  * Index Page 
  * 
  */
-const IndexPage = ({data}) => (
+
+const IndexPage = () => (
   <Layout>
     <SEO title="Portfolio" keywords={[`gatsby`, `application`, `react`]} />
     <Intro />
     <Transit />
+    <About />
   </Layout>
 )
 

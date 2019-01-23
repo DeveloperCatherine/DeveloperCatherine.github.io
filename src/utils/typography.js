@@ -36,7 +36,7 @@ const typography = new Typography({
         },
         'h1,h2,h3,h4,h5,h6': {
             marginTop: rhythm(2),
-            letterSpacing: rhythm(1 / 20),
+            letterSpacing: rhythm(1 / 16),
         },
         blockquote: {
             ...scale(1 / 5),
