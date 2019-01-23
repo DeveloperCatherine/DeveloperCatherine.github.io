@@ -8,7 +8,8 @@ import ArrowImage from '../components/arrow-image'
 import SEO from '../components/seo'
 
 /**
- * Intro
+ * Intro Section in Index Page
+ * 
  */
 
 const IntroWrapper = styled.section`
@@ -103,7 +104,8 @@ const Intro = () => (
 
 
 /**
- * Transit
+ * Transit Section in Index Page
+ * 
  */
 
 const ArrowImageWrapper = styled.div`
@@ -173,6 +175,11 @@ const Transit = () => (
   </Container>
 )
 
+
+/**
+ * Index Page 
+ * 
+ */
 const IndexPage = ({data}) => (
   <Layout>
     <SEO title="Portfolio" keywords={[`gatsby`, `application`, `react`]} />
