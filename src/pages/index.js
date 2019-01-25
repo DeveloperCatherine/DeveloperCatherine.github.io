@@ -184,20 +184,19 @@ const Title = styled.h1`
 
 const LargeQuote = styled.h1`
   font-size: ${props => (props.largeScreen ? '3.375rem' : '2.5rem')};
-  margin: ${props => (props.largeScreen ? '1.6875rem 3rem 2.5rem' : '1.5rem 1.6875rem 2rem')};
+  margin: ${props => (props.largeScreen ? '1.6875rem 3rem 2.5rem' : '1.5rem 2.25rem 2rem')};
   color: #FFFFFF;
   line-height: 1.3;
 `;
 
 const QuoteColWrapper = styled.div`
   background-color: #FE840E;
-  min-width: 283px;
   margin: 7% 0;
 `;
 
 const QuoteColWrapperXsSM = styled.div`
   background-color: #FE840E;
-  min-width: 309px; //283px
+  min-width: 19.25rem;
 `;
 
 const SurfingImageWrapper = styled.div`
@@ -206,15 +205,20 @@ const SurfingImageWrapper = styled.div`
   left: ${props => (props.sm ? '50%' : '30%')};
 `;
 
+const AboutContainerWrapper = styled.section`
+  padding: 0;
+  margin: 0;
+`;
+
 const About = () => (
-  <Container id="about">
+  <Container id="about" component={AboutContainerWrapper}>
     <Row justify="center" align="center" component={TitleWrapper}>
       <LargeNumber>01.</LargeNumber>
       <Col>
         <Title>my story</Title>
       </Col>
     </Row>
-    <Row align="center" justify="center">
+    <Row align="center" justify="center" nogutter>
       <Visible md lg xl>
         <SurfingImageWrapper>
           <SurfingImage />

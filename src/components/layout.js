@@ -15,7 +15,10 @@ const PageWrapper = styled.section`
 const ContentWrapper = styled.div`
   margin: 0 auto;
   max-width: 960px;
-  padding: 0px 1.0875rem 1.45rem;
+  @media screen and (max-width: 960px) {
+    padding: 0 0 1.45rem;
+  };
+  padding: 0 1.0875 1.45rem;
 `;
 
 const Footer = styled.footer`
