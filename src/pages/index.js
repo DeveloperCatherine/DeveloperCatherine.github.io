@@ -7,7 +7,7 @@ import ProfileImage from '../components/profile-image'
 import ArrowImage from '../components/arrow-image'
 import SurfingImage from '../components/surfing-image'
 import SEO from '../components/seo'
-
+import Emoji from '../utils/emoji'
 /**
  * Intro Section in Index Page
  * 
@@ -62,7 +62,7 @@ const Intro = () => (
     <Row align="center">
       <Col md={12}>
         <IntroGreeting>
-          <h1>{'// good'} <DayPart hour={new Date().getHours()}/>.</h1>
+          <h1><Emoji symbol="👋" label="Hi" /> good <DayPart hour={new Date().getHours()}/>.</h1>
           <p>This is my portfolio, an ongoing project that I recently started working on.</p>
         </IntroGreeting>
       </Col>
@@ -108,7 +108,7 @@ const Intro = () => (
  */
 
 const ArrowImageWrapper = styled.div`
-  margin: ${props => (props.noTopMargin ? '0 0 1.6875rem' : '1rem')};
+  margin: ${props => (props.noTopMargin ? '0 0 3rem' : '1.6875rem')};
   display: flex;
   justify-content: center;
 `;
@@ -156,14 +156,6 @@ const Transit = () => (
         </Col>
       </Hidden>
     </Row>
-    {/* <Row>
-      <Col><div style={{
-          display: 'flex',
-          justifyContent: 'center'
-      }}>
-        <h4>To be continued ...</h4>
-      </div></Col>
-    </Row> */}
   </Container>
 )
 
@@ -191,22 +183,27 @@ const Title = styled.h1`
 `;
 
 const LargeQuote = styled.h1`
-  font-size: ${props => (props.smallScreen ? '2.375rem' : '3.375rem')};
-  margin: ${props => (props.smallScreen ? '1rem 1rem 1.6875rem' : '1.6875rem 2.375rem 2.375rem')};
+  font-size: ${props => (props.largeScreen ? '3.375rem' : '2.5rem')};
+  margin: ${props => (props.largeScreen ? '1.6875rem 3rem 2.5rem' : '1.5rem 1.6875rem 2rem')};
   color: #FFFFFF;
-  word-break: normal;
-  line-height: 1.2;
+  line-height: 1.3;
 `;
 
 const QuoteColWrapper = styled.div`
   background-color: #FE840E;
-  min-width: 277px;
+  min-width: 283px;
+  margin: 7% 0;
+`;
+
+const QuoteColWrapperXsSM = styled.div`
+  background-color: #FE840E;
+  min-width: 309px; //283px
 `;
 
 const SurfingImageWrapper = styled.div`
   position: absolute;
-  width: 70%;
-  left: 30%;
+  width: ${props => (props.sm ? '50%' : '70%')};
+  left: ${props => (props.sm ? '50%' : '30%')};
 `;
 
 const About = () => (
@@ -217,31 +214,43 @@ const About = () => (
         <Title>my story</Title>
       </Col>
     </Row>
-    <Row debug align="center" justify="center">
+    <Row align="center" justify="center">
       <Hidden xs sm>
         <SurfingImageWrapper>
           <SurfingImage />
         </SurfingImageWrapper>
       </Hidden>
-      <Col xs={9} sm={9} md={6} lg={6} xl={6} pull={{ md: 3, lg: 3, xl: 3 }} component={QuoteColWrapper}>
-        <Visible xs sm md>
-          <LargeQuote smallScreen>
-            a new adventure has started
-          </LargeQuote>
-        </Visible>
-        <Visible lg xl>
-          <LargeQuote>
-            a new adventure has started
-          </LargeQuote>
-        </Visible>
-      </Col>
+      <Visible sm>
+        <SurfingImageWrapper sm>
+          <SurfingImage />
+        </SurfingImageWrapper>
+      </Visible>
+      <ScreenClassRender render={screenClass => (
+        <Col xs={9} sm={8} md={6} lg={6} xl={6} pull={{ sm: 2, md: 3, lg: 3, xl: 3 }} component={['xs', 'sm'].includes(screenClass) ? QuoteColWrapperXsSM : QuoteColWrapper}>
+          <Visible xs sm md>
+            <LargeQuote>a new adventure has started</LargeQuote>
+          </Visible>
+          <Visible lg xl>
+            <LargeQuote largeScreen>a new adventure has started</LargeQuote>
+          </Visible>
+        </Col>
+      )} />
     </Row>
-    <Row>
+    {/* <Row>
       <ScreenClassRender render={screenClass => (
         <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
           Screen class: {screenClass}
         </p>
       )} />
+    </Row> */}
+    <Row>
+      <Col md={12}>
+        <div style={{
+          textAlign: "center"
+        }}>
+          <h3>- stay tunned -</h3>
+          <p>This project is not finished yet. Feel free to check its repo <Emoji symbol="👇" label="point-down" /> for more details :)</p>
+      </div></Col>
     </Row>
   </Container>
 )
