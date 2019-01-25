@@ -207,7 +207,7 @@ const SurfingImageWrapper = styled.div`
 `;
 
 const About = () => (
-  <Container>
+  <Container id="about">
     <Row justify="center" align="center" component={TitleWrapper}>
       <LargeNumber>01.</LargeNumber>
       <Col>
