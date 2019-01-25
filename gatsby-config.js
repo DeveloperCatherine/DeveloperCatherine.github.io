@@ -45,6 +45,7 @@ module.exports = {
       },
     },
     `gatsby-plugin-styled-components`,
+    // `gatsby-react-grid-system`, // This is a local plugin that's under experiement
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.app/offline
     // 'gatsby-plugin-offline',
