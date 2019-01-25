@@ -5,6 +5,7 @@
   "author": "Yueying Catherine Tang <yueying.catherine@gmail.com>",
   "private": true,
   "dependencies": {
+    "@bootstrap-styled/v4": "^2.0.17",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.88",
     "gatsby-image": "^2.0.20",
@@ -20,7 +21,7 @@
     "gh-pages": "^2.0.1",
     "prop-types": "^15.6.2",
     "react": "^16.7.0",
-    "react-dom": "^16.6.3",
+    "react-dom": "^16.7.0",
     "react-grid-system": "^4.4.2",
     "react-helmet": "^5.2.0",
     "react-typography": "^0.16.18",

@@ -1,6 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
-import {Container, Row, Col, ScreenClassRender, Hidden, Visible} from 'react-grid-system'
+import {Container, Row, Col, ScreenClassRender, Visible} from 'react-grid-system'
 
 import Layout from '../components/layout'
 import ProfileImage from '../components/profile-image'
@@ -93,7 +93,7 @@ const Intro = () => (
             </RoleList>
           </Col>
           <Col md={5} lg={4}>
-            <Hidden xs sm><ProfileImage /></Hidden>
+            <Visible md lg xl><ProfileImage /></Visible>
           </Col>
         </Row>
       </Col>
@@ -130,11 +130,11 @@ const TransitText = styled.div`
 const Transit = () => (
   <Container>
     <Row align="center" nogutter component={TransitRowWrapper}>
-      <Hidden xs sm><Col md={3} sm={9} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper}>
+      <Visible md lg xl><Col md={3} sm={9} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper}>
         <ArrowImageWrapper>
           <ArrowImage />
         </ArrowImageWrapper>
-      </Col></Hidden>
+      </Col></Visible>
       <Col md={8} sm={12}>
         <TransitText>
           <b>Sounds a bit confusing?</b>
@@ -142,19 +142,19 @@ const Transit = () => (
           Let me tell you how I fit those roles.
         </TransitText>
       </Col>
-      <Hidden md lg xl><Col>
+      <Visible xs sm><Col>
         <ArrowImageWrapper noTopMargin>
           <ArrowImage />
         </ArrowImageWrapper>
-      </Col></Hidden>
+      </Col></Visible>
     </Row>
     <Row align="center" nogutter component={TransitRowWrapper}>
-      <Hidden xs sm>
+      <Visible md lg xl>
         <Col md={3} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper} style={{ height: '3.875rem'}}>
         </Col>
         <Col md={7} style={{ height: '3.875rem'}}>
         </Col>
-      </Hidden>
+      </Visible>
     </Row>
   </Container>
 )
@@ -215,11 +215,11 @@ const About = () => (
       </Col>
     </Row>
     <Row align="center" justify="center">
-      <Hidden xs sm>
+      <Visible md lg xl>
         <SurfingImageWrapper>
           <SurfingImage />
         </SurfingImageWrapper>
-      </Hidden>
+      </Visible>
       <Visible sm>
         <SurfingImageWrapper sm>
           <SurfingImage />
