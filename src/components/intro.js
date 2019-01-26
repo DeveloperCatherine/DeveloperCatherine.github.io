@@ -24,6 +24,7 @@ const LargeText = styled.p`
     font-size: 1.6875rem;
     margin: 0 15px calc(1.6875rem / 2);
     letter-spacing: 0.05rem;
+    text-align: center;
 `;
 
 const RoleList = styled.ul`
@@ -94,7 +95,7 @@ const Intro = () => (
       </Col>
       <Col xs = "12" md="7">
         <Row className="align-items-center" noGutters>
-          {/* role list background cards */}
+          {/* role list background blocks */}
           {/* bottom card responsive style */}
           <RoleListBgBottom className="d-md-none" smallScreens />
           <RoleListBgBottom className="d-none d-md-block d-lg-none" mediumScreens />
