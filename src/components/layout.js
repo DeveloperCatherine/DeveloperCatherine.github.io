@@ -3,10 +3,13 @@ import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Header from './header'
-// import './layout.css'
+
+const MediumScreenWidth = '768px';
+const SmallScreenWidth = '576px';
+const MainContentWidth = '960px';
 
 const PageWrapper = styled.section`
-  @media screen and (max-width: 960px) {
+  @media screen and (max-width: ${MediumScreenWidth}) {
     padding: 0 20px 1.45rem;
   };
   padding: 0 40px 1.45rem;
@@ -14,11 +17,11 @@ const PageWrapper = styled.section`
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
-  max-width: 960px;
-  @media screen and (max-width: 960px) {
+  max-width: ${MainContentWidth};
+  @media screen and (max-width: ${SmallScreenWidth}) {
     padding: 0 0 1.45rem;
   };
-  padding: 0 1.0875 1.45rem;
+  padding: 0 1.0875rem 1.45rem;
 `;
 
 const Footer = styled.footer`

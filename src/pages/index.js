@@ -184,7 +184,7 @@ const Title = styled.h1`
 
 const LargeQuote = styled.h1`
   font-size: ${props => (props.largeScreen ? '3.375rem' : '2.5rem')};
-  margin: ${props => (props.largeScreen ? '1.6875rem 3rem 2.5rem' : '1.5rem 2.25rem 2rem')};
+  margin: ${props => (props.largeScreen ? '1.6875rem 3.375rem 2.5rem' : '1.5rem 2.25rem 2rem')};
   color: #FFFFFF;
   line-height: 1.3;
 `;
