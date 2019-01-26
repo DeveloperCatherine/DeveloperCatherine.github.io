@@ -5,8 +5,8 @@ import styled from 'styled-components'
 import Header from './header'
 
 const LargeScreenWidth = '992px';
-// const MediumScreenWidth = '768px';
-const SmallScreenWidth = '576px';
+// const MediumScreenWidth = '767px';
+const SmallScreenWidth = '575px';
 const MainContentWidth = '960px';
 
 const PageWrapper = styled.section`
