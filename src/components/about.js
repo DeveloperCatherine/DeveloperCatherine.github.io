@@ -10,6 +10,13 @@ import {Container, Row, Col, ScreenClassRender, Visible} from 'react-grid-system
 import SurfingImage from '../components/surfing-image'
 import Emoji from '../utils/emoji'
 
+/**
+ * Screen breakpoints
+ */
+const SmallScreenWidth = '575px';
+const MediumScreenWidth = '767px';
+// const LargeScreenWidth = '992px';
+
 const TitleWrapper = styled.div`
   padding-top: 3rem;
   padding-bottom: 1.6875rem
@@ -49,6 +56,16 @@ const SurfingImageWrapper = styled.div`
   position: absolute;
   width: ${props => (props.sm ? '50%' : '70%')};
   left: ${props => (props.sm ? '50%' : '30%')};
+  @media screen and (max-width: ${SmallScreenWidth}) {
+    display: none;
+  };
+  @media screen and (max-width: ${MediumScreenWidth}) {
+    width: 50%;
+    left: 50%;
+  };
+  width: 70%;
+  left: 30%;
+
 `;
 
 const AboutContainerWrapper = styled.section`
@@ -65,26 +82,19 @@ const About = () => (
       </Col>
     </Row>
     <Row align="center" justify="center" nogutter>
-      <Visible md lg xl>
         <SurfingImageWrapper>
           <SurfingImage />
         </SurfingImageWrapper>
-      </Visible>
-      <Visible sm>
-        <SurfingImageWrapper sm>
-          <SurfingImage />
-        </SurfingImageWrapper>
-      </Visible>
-      <ScreenClassRender render={screenClass => (
-        <Col xs={9} sm={8} md={6} lg={6} xl={6} pull={{ sm: 2, md: 3, lg: 3, xl: 3 }} component={['xs', 'sm'].includes(screenClass) ? QuoteColWrapperXsSM : QuoteColWrapper}>
-          <Visible xs sm md>
-            <LargeQuote>a new adventure has started</LargeQuote>
-          </Visible>
-          <Visible lg xl>
-            <LargeQuote largeScreen>a new adventure has started</LargeQuote>
-          </Visible>
-        </Col>
-      )} />
+        <ScreenClassRender render={screenClass => (
+            <Col xs={9} sm={8} md={6} lg={6} xl={6} pull={{ sm: 2, md: 3, lg: 3, xl: 3 }} component={['xs', 'sm'].includes(screenClass) ? QuoteColWrapperXsSM : QuoteColWrapper}>
+                <Visible xs sm md>
+                <LargeQuote>a new adventure has started</LargeQuote>
+                </Visible>
+                <Visible lg xl>
+                <LargeQuote largeScreen>a new adventure has started</LargeQuote>
+                </Visible>
+            </Col>
+        )} />
     </Row>
     <Row>
       <Col md={12}>

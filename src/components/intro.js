@@ -4,39 +4,52 @@
  */
 import React from 'react'
 import styled from 'styled-components'
-import {Container, Row, Col, ScreenClassRender, Visible} from 'react-grid-system'
+import {Container, Row, Col, ScreenClassRender} from 'react-grid-system'
 
 import ProfileImage from '../components/profile-image'
 import Emoji from '../utils/emoji'
 
+/**
+ * Screen breakpoints
+ */
+// const LargeScreenWidth = '992px';
+const MediumScreenWidth = '767px';
+// const SmallScreenWidth = '575px';
+
 
 const IntroWrapper = styled.section`
-  margin-bottom: calc(1.6875rem * 2 - 1rem);
+    margin-bottom: calc(1.6875rem * 2 - 1rem);
 `;
 
 const IntroGreeting = styled.div`
-  text-align: center;
-`;
-
-const RoleList = styled.ul`
-  list-style: none;
-  margin: 0;
-  padding: 1.6875rem 0;
-`;
-
-const RoleItem = styled.li`
-  font-size: ${props => (props.inactive ? '1.2rem' : '1.6875rem')};
-  text-align: center;
-  font-weight: bold;
-  letter-spacing: 0.05rem;
-  ${props => (props.inactive ? '' : 'text-decoration: rgba(255, 255, 255, 0.45) double underline;')}
-  color: ${props => (props.inactive ? 'rgba(255, 255, 255, 0.8)' : '#FFFFFF')};
+    text-align: center;
 `;
 
 const LargeText = styled.p`
-  font-size: 1.6875rem;
-  margin: 0 15px calc(1.6875rem / 2);
-  letter-spacing: 0.05rem;
+    font-size: 1.6875rem;
+    margin: 0 15px calc(1.6875rem / 2);
+    letter-spacing: 0.05rem;
+`;
+
+const RoleList = styled.ul`
+    list-style: none;
+    margin: 0;
+    padding: 1.6875rem 0;
+`;
+
+const RoleItem = styled.li`
+    font-size: ${props => (props.inactive ? '1.2rem' : '1.6875rem')};
+    text-align: center;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+    ${props => (props.inactive ? '' : 'text-decoration: rgba(255, 255, 255, 0.45) double underline;')}
+    color: ${props => (props.inactive ? 'rgba(255, 255, 255, 0.8)' : '#FFFFFF')};
+`;
+
+const ProfileImageWrapper = styled.div`
+    @media screen and (max-width: ${MediumScreenWidth}) {
+        display: none;
+    };
 `;
 
 function DayPart (props) {
@@ -90,7 +103,7 @@ const Intro = () => (
             </RoleList>
           </Col>
           <Col md={5} lg={4}>
-            <Visible md lg xl><ProfileImage /></Visible>
+            <ProfileImageWrapper><ProfileImage /></ProfileImageWrapper>
           </Col>
         </Row>
       </Col>
