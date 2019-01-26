@@ -35,7 +35,7 @@ const RoleItem = styled.li`
 
 const LargeText = styled.p`
   font-size: 1.6875rem;
-  margin-bottom: calc(1.6875rem / 2);
+  margin: 0 15px calc(1.6875rem / 2);
   letter-spacing: 0.05rem;
 `;
 
@@ -75,11 +75,11 @@ const Intro = () => (
       <Col md={7}>
         <Row align="center" nogutter>
           <ScreenClassRender render={screenClass => (
-            <div style={{ left: '1rem', top: ['xs', 'sm'].includes(screenClass) ? '1rem' : '2.5rem', backgroundColor: '#FEB30E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
+            <div style={{ left: '0.6rem', top: ['xs', 'sm'].includes(screenClass) ? '0.6rem' : '2.25rem', backgroundColor: '#FEB30E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
             </div>
           )} />
           <ScreenClassRender render={screenClass => (
-            <div style={{ left: '0rem', top: ['xs', 'sm'].includes(screenClass) ? '0' : '1.5rem', backgroundColor: '#FE840E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
+            <div style={{ left: '0rem', top: ['xs', 'sm'].includes(screenClass) ? '0' : '1.65rem', backgroundColor: '#FE840E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
             </div>
           )} />
           <Col md={7} lg={6}>

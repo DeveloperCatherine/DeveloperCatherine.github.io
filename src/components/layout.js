@@ -4,12 +4,13 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 import Header from './header'
 
-const MediumScreenWidth = '768px';
+const LargeScreenWidth = '992px';
+// const MediumScreenWidth = '768px';
 const SmallScreenWidth = '576px';
 const MainContentWidth = '960px';
 
 const PageWrapper = styled.section`
-  @media screen and (max-width: ${MediumScreenWidth}) {
+  @media screen and (max-width: ${LargeScreenWidth}) {
     padding: 0 20px 1.45rem;
   };
   padding: 0 40px 1.45rem;
