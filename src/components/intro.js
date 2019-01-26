@@ -46,7 +46,8 @@ const RoleItem = styled.li`
     color: ${props => (props.inactive ? 'rgba(255, 255, 255, 0.8)' : '#FFFFFF')};
 `;
 
-const ProfileImageWrapper = styled.div`
+const ProfileImageWrapper = styled.span`
+    /* Hidden in small screens */
     @media screen and (max-width: ${MediumScreenWidth}) {
         display: none;
     };

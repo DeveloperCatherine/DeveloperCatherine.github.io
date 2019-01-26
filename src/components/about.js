@@ -56,16 +56,19 @@ const SurfingImageWrapper = styled.div`
   position: absolute;
   width: ${props => (props.sm ? '50%' : '70%')};
   left: ${props => (props.sm ? '50%' : '30%')};
+  
+  /* Hidden in small screens */
   @media screen and (max-width: ${SmallScreenWidth}) {
     display: none;
   };
+  
   @media screen and (max-width: ${MediumScreenWidth}) {
     width: 50%;
     left: 50%;
   };
+  
   width: 70%;
   left: 30%;
-
 `;
 
 const AboutContainerWrapper = styled.section`
@@ -83,7 +86,7 @@ const About = () => (
     </Row>
     <Row align="center" justify="center" nogutter>
         <SurfingImageWrapper>
-          <SurfingImage />
+            <SurfingImage />
         </SurfingImageWrapper>
         <ScreenClassRender render={screenClass => (
             <Col xs={9} sm={8} md={6} lg={6} xl={6} pull={{ sm: 2, md: 3, lg: 3, xl: 3 }} component={['xs', 'sm'].includes(screenClass) ? QuoteColWrapperXsSM : QuoteColWrapper}>
