@@ -1,6 +1,6 @@
 import React from 'react'
 // import styled from 'styled-components'
-import {ScreenClassRender} from 'react-grid-system'
+// import {ScreenClassRender} from 'react-grid-system'
 
 import Layout from '../components/layout'
 import Intro from '../components/intro'
@@ -20,11 +20,11 @@ const IndexPage = () => (
     <Intro />
     <Transit />
     <About />
-    <ScreenClassRender render={screenClass => (
+    {/* <ScreenClassRender render={screenClass => (
         <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
           Screen class: {screenClass}
         </p>
-      )} />
+      )} /> */}
   </Layout>
 )
 

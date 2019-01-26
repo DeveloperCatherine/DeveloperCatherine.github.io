@@ -4,20 +4,15 @@
  */
 import React from 'react'
 import styled from 'styled-components'
-import {Container, Row, Col, ScreenClassRender} from 'react-grid-system'
+import Container from '@bootstrap-styled/v4/lib/Container'
+import Row from '@bootstrap-styled/v4/lib/Row'
+import Col from '@bootstrap-styled/v4/lib/Col'
 
 import ProfileImage from '../components/profile-image'
 import Emoji from '../utils/emoji'
 
-/**
- * Screen breakpoints
- */
-// const LargeScreenWidth = '992px';
-const MediumScreenWidth = '767px';
-// const SmallScreenWidth = '575px';
 
-
-const IntroWrapper = styled.section`
+const IntroWrapper = styled(Container)`
     margin-bottom: calc(1.6875rem * 2 - 1rem);
 `;
 
@@ -46,11 +41,26 @@ const RoleItem = styled.li`
     color: ${props => (props.inactive ? 'rgba(255, 255, 255, 0.8)' : '#FFFFFF')};
 `;
 
+const RoleListBgBottom = styled.div`
+    background-color: #FEB30E;    
+    position: absolute;
+    left: 0.6rem;
+    top:  ${props => (props.smallScreens ? '0.6rem' : '2.25rem')};
+    height: ${props => (props.smallScreens ? '100%' : '80%')};
+    width: ${props => ((props.mediumScreens || props.smallScreens) ? '97%' : '85%')};
+`;
+
+const RoleListBgTop = styled.div`
+    background-color: #FE840E;    
+    position: absolute;
+    left: 0;
+    top:  ${props => (props.smallScreens ? '0' : '1.65rem')};
+    height: ${props => (props.smallScreens ? '100%' : '80%')};
+    width: ${props => ((props.mediumScreens || props.smallScreens) ? '97%' : '85%')};
+`;
+
 const ProfileImageWrapper = styled.span`
-    /* Hidden in small screens */
-    @media screen and (max-width: ${MediumScreenWidth}) {
-        display: none;
-    };
+    max-width: 170px;
 `;
 
 function DayPart (props) {
@@ -69,47 +79,44 @@ function DayPart (props) {
 }
 
 const Intro = () => (
-  <Container component={IntroWrapper}>
-    <Row align="center">
-      <Col md={12}>
+  <IntroWrapper>
+    <Row className="align-items-center">
+      <Col>
         <IntroGreeting>
           <h1><Emoji symbol="👋" label="Hi" /> good <DayPart hour={new Date().getHours()}/>.</h1>
           <p>This is my portfolio, an ongoing project that I recently started working on.</p>
         </IntroGreeting>
       </Col>
     </Row>
-    <Row align="center">
-      <Col md={5}>
-        <ScreenClassRender render={screenClass => (
-          <div style={{ textAlign: ['lg', 'xl', 'md'].includes(screenClass) ? 'right' : 'center' }} >
-            <LargeText>I'm Catherine, a</LargeText>
-          </div>
-        )} />
+    <Row className="align-items-center">
+      <Col xs = "12" md="5" className="d-flex justify-content-center justify-content-md-end">
+        <LargeText>I'm Catherine, a</LargeText>
       </Col>
-      <Col md={7}>
-        <Row align="center" nogutter>
-          <ScreenClassRender render={screenClass => (
-            <div style={{ left: '0.6rem', top: ['xs', 'sm'].includes(screenClass) ? '0.6rem' : '2.25rem', backgroundColor: '#FEB30E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
-            </div>
-          )} />
-          <ScreenClassRender render={screenClass => (
-            <div style={{ left: '0rem', top: ['xs', 'sm'].includes(screenClass) ? '0' : '1.65rem', backgroundColor: '#FE840E', height: ['xs', 'sm'].includes(screenClass) ? '100%' : '80%', width: ['xs', 'sm', 'md'].includes(screenClass) ? '97%' : '85%', position: 'absolute'}}>
-            </div>
-          )} />
-          <Col md={7} lg={6}>
+      <Col xs = "12" md="7">
+        <Row className="align-items-center" noGutters>
+          {/* role list background cards */}
+          {/* bottom card responsive style */}
+          <RoleListBgBottom className="d-md-none" smallScreens />
+          <RoleListBgBottom className="d-none d-md-block d-lg-none" mediumScreens />
+          <RoleListBgBottom className="d-none d-lg-block"/>
+          {/* top card responsive style */}
+          <RoleListBgTop className="d-md-none" smallScreens />
+          <RoleListBgTop className="d-none d-md-block d-lg-none" mediumScreens />
+          <RoleListBgTop className="d-none d-lg-block"/>
+          <Col xs="12" md="7" lg="6">
             <RoleList>
               <RoleItem inactive>UX Designer</RoleItem>
               <RoleItem>Product Maker</RoleItem>
               <RoleItem inactive>Web Developer</RoleItem>
             </RoleList>
           </Col>
-          <Col md={5} lg={4}>
-            <ProfileImageWrapper><ProfileImage /></ProfileImageWrapper>
+          <Col md="5" lg="4">
+            <ProfileImageWrapper className="d-none d-sm-block"><ProfileImage /></ProfileImageWrapper>
           </Col>
         </Row>
       </Col>
     </Row>
-  </Container>
+  </IntroWrapper>
 )
 
 export default Intro

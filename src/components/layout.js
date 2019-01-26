@@ -2,27 +2,29 @@ import React from 'react'
 import PropTypes from 'prop-types'
 import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
+
 import Header from './header'
+import './bootstrap-grid.css'
 
 const LargeScreenWidth = '992px';
-// const MediumScreenWidth = '767px';
-const SmallScreenWidth = '575px';
+// const MediumScreenWidth = '768px';
+const SmallScreenWidth = '576px';
 const MainContentWidth = '960px';
 
 const PageWrapper = styled.section`
-  @media screen and (max-width: ${LargeScreenWidth}) {
-    padding: 0 20px 1.45rem;
+  @media screen and (min-width: ${LargeScreenWidth}) {
+    padding: 0 40px 1.45rem;
   };
-  padding: 0 40px 1.45rem;
+  padding: 0 20px 1.45rem;
 `;
 
 const ContentWrapper = styled.div`
   margin: 0 auto;
   max-width: ${MainContentWidth};
-  @media screen and (max-width: ${SmallScreenWidth}) {
-    padding: 0 0 1.45rem;
+  @media screen and (min-width: ${SmallScreenWidth}) {
+    padding: 0 1.0875rem 1.45rem;
   };
-  padding: 0 1.0875rem 1.45rem;
+  padding: 0 0 1.45rem;
 `;
 
 const Footer = styled.footer`
