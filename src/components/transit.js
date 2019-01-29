@@ -5,7 +5,10 @@
 
 import React from 'react'
 import styled from 'styled-components'
-import {Container, Row, Col, Visible} from 'react-grid-system'
+
+import Container from '@bootstrap-styled/v4/lib/Container'
+import Row from '@bootstrap-styled/v4/lib/Row'
+import Col from '@bootstrap-styled/v4/lib/Col'
 
 import ArrowImage from '../components/arrow-image'
 
@@ -15,11 +18,12 @@ const ArrowImageWrapper = styled.div`
   justify-content: center;
 `;
 
-const TransitColWrapper = styled.div`
+const TransitCol = styled(Col)`
   border-right: 1px solid black;
+  ${props => (props.height ? ('height: ' + props.height + ';') : '')}
 `;
 
-const TransitRowWrapper = styled.div`
+const TransitRow = styled(Row)`
   border-top: 1px solid black;
 `;
 
@@ -31,33 +35,29 @@ const TransitText = styled.div`
 
 const Transit = () => (
   <Container>
-    <Row align="center" nogutter component={TransitRowWrapper}>
-      <Visible md lg xl><Col md={3} sm={9} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper}>
+    <TransitRow className="align-items-center" noGutters>
+      <TransitCol xs="9" md="3" className="offset-lg-1 d-none d-md-block">
         <ArrowImageWrapper>
           <ArrowImage />
         </ArrowImageWrapper>
-      </Col></Visible>
-      <Col md={8} sm={12}>
+      </TransitCol>
+      <Col xs="12" md="8">
         <TransitText>
           <b>Sounds a bit confusing?</b>
           <br />
           Let me tell you how I fit those roles.
         </TransitText>
       </Col>
-      <Visible xs sm><Col>
+      <Col className="d-md-none">
         <ArrowImageWrapper noTopMargin>
           <ArrowImage />
         </ArrowImageWrapper>
-      </Col></Visible>
-    </Row>
-    <Row align="center" nogutter component={TransitRowWrapper}>
-      <Visible md lg xl>
-        <Col md={3} offset={{ xs: 0, sm: 0, md: 0, lg: 1, xl: 1}} component={TransitColWrapper} style={{ height: '3.875rem'}}>
-        </Col>
-        <Col md={7} style={{ height: '3.875rem'}}>
-        </Col>
-      </Visible>
-    </Row>
+      </Col>
+    </TransitRow>
+    <TransitRow className="align-items-center" noGutters>
+        <TransitCol md="3" height="3.9375rem" className="offset-lg-1 d-none d-md-block" />
+        <Col md="7" style={{ height: '3.9375rem'}} className="d-none d-md-block"/>
+    </TransitRow>
   </Container>
 )
 
