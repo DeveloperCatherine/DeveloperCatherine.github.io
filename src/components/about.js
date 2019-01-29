@@ -51,13 +51,8 @@ const SurfingImageWrapper = styled.div`
     margin-left: 30%;
 `;
 
-const AboutContainer = styled(Container)`
-  padding: 0;
-  margin: 0;
-`;
-
 const About = () => (
-  <AboutContainer id="about">
+  <Container id="about">
     <TitleRow className="align-items-center justify-content-center">
       <LargeNumber>01.</LargeNumber>
       <Col>
@@ -95,7 +90,7 @@ const About = () => (
           Screen class: {screenClass}
         </p>
     )} /> */}
-  </AboutContainer>
+  </Container>
 )
 
 export default About
