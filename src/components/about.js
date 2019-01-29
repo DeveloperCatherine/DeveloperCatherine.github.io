@@ -16,7 +16,7 @@ import Emoji from '../utils/emoji'
 
 
 const TitleRow = styled(Row)`
-  padding-top: 3rem;
+  padding-top: 3.375rem;
   padding-bottom: 1.6875rem
 `;
 
@@ -42,13 +42,13 @@ const QuoteText = styled.h1`
 
 const QuoteCol = styled(Col)`
     background-color: #FE840E;
-    margin: ${props => (props.XsScreen ? '0' : '0 0 0 -100%')};
+    margin: ${props => (props.smallScreen ? '0' : '0 0 0 -100%')};
     min-width: 19.25rem;
 `;
 
 const SurfingImageWrapper = styled.div`
-    width: 75%;
-    margin-left: 25%;
+    width: 70%;
+    margin-left: 30%;
 `;
 
 const AboutContainer = styled(Container)`
@@ -64,20 +64,20 @@ const About = () => (
         <Title>my story</Title>
       </Col>
     </TitleRow>
-    <Row className="align-items-center justify-content-center justify-content-sm-start" noGutters>
-        <Col className="d-none d-sm-block">
-            {/* surfing image hidden in xs screens */}
+    <Row className="align-items-center justify-content-center justify-content-md-start" noGutters>
+        <Col className="d-none d-md-block">
+            {/* surfing image hidden in xs and sm screens */}
             <SurfingImageWrapper>
                 <SurfingImage />
             </SurfingImageWrapper>
         </Col>
-        <QuoteCol sm="8" md="6" className="d-none d-sm-block">
-            {/* for sm and larger screens */}
+        <QuoteCol sm="8" md="6" className="d-none d-md-block">
+            {/* for md and larger screens */}
             <QuoteText className="d-lg-none">a new adventure has started</QuoteText>
             <QuoteText largeScreen className="d-none d-lg-block">a new adventure has started</QuoteText>
         </QuoteCol>
-        <QuoteCol XsScreen xs="10" className="d-sm-none">
-            {/* for xs screens */}
+        <QuoteCol smallScreen xs="10" sm="8" className="d-md-none">
+            {/* for xs and sm screens */}
             <QuoteText>a new adventure has started</QuoteText>
         </QuoteCol>
     </Row>
