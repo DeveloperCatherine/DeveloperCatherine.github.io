@@ -12,7 +12,7 @@ import ProfileImage from '../components/profile-image'
 import Emoji from '../utils/emoji'
 
 
-const IntroWrapper = styled(Container)`
+const IntroContainer = styled(Container)`
     margin-bottom: calc(1.6875rem * 2 - 1rem);
 `;
 
@@ -80,7 +80,7 @@ function DayPart (props) {
 }
 
 const Intro = () => (
-  <IntroWrapper>
+  <IntroContainer>
     <Row className="align-items-center">
       <Col>
         <IntroGreeting>
@@ -117,7 +117,7 @@ const Intro = () => (
         </Row>
       </Col>
     </Row>
-  </IntroWrapper>
+  </IntroContainer>
 )
 
 export default Intro
