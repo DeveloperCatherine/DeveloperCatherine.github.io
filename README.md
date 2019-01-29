@@ -30,4 +30,12 @@ Hi this is Catherine. I'm building my new porfolio site with React. It's not fin
     ```
     https://www.styled-components.com/
     ```
+
+1. **Bootstrap Styled**
+
+   A Bootstrap library for React made with Bootstrap 4 philosophy and styled-components.
+
+    ```
+    https://bootstrap-styled.github.io/bootstrap-styled/
+    ```
     
