@@ -12,6 +12,7 @@ import Row from '@bootstrap-styled/v4/lib/Row'
 import Col from '@bootstrap-styled/v4/lib/Col'
 
 import SurfingImage from '../components/surfing-image'
+import MaskedSurfingImage from '../components/surfing-masked-image'
 import Emoji from '../utils/emoji'
 
 
@@ -21,10 +22,10 @@ const TitleRow = styled(Row)`
 `;
 
 const LargeNumber = styled.span`
-  font-size: 6rem;
+  font-size: 5rem;
   color: #E5E5E5;
   position: absolute;
-  padding-right: 6rem;
+  padding-right: 5.4rem;
 `;
 
 const Title = styled.h1`
@@ -43,7 +44,19 @@ const QuoteText = styled.h1`
 const QuoteCol = styled(Col)`
     background-color: #FE840E;
     margin: ${props => (props.smallScreen ? '0' : '0 0 0 -100%')};
-    min-width: 19.25rem;
+    min-width: ${props => (props.largeScreen ? '436px' : '19.25rem')};
+`;
+
+const MaskedImageBlock = styled.div`
+    position: absolute;
+    overflow: hidden;
+    height: 100%;
+    width: 40%;
+    margin-left: 60%;
+`;
+
+const MaskedSurfingImageWrapper = styled.div`
+    margin-top: ${props => (props.mediumScreen ? '-25%' : '-26%')};
 `;
 
 const SurfingImageWrapper = styled.div`
@@ -66,10 +79,31 @@ const About = () => (
                 <SurfingImage />
             </SurfingImageWrapper>
         </Col>
-        <QuoteCol sm="8" md="6" className="d-none d-md-block">
-            {/* for md and larger screens */}
-            <QuoteText className="d-lg-none">a new adventure has started</QuoteText>
-            <QuoteText largeScreen className="d-none d-lg-block">a new adventure has started</QuoteText>
+        <QuoteCol largeScreen lg="6" className="d-none d-lg-block">
+            {/* for lg and xl screens */}
+            <Row noGutters>
+                <MaskedImageBlock>
+                    <MaskedSurfingImageWrapper>
+                        <MaskedSurfingImage />
+                    </MaskedSurfingImageWrapper>
+                </MaskedImageBlock>
+                <Col>
+                    <QuoteText largeScreen className="d-none d-lg-block">a new adventure has started</QuoteText>
+                </Col>
+            </Row>
+        </QuoteCol>
+        <QuoteCol md="6" className="d-none d-md-block d-lg-none">
+            {/* for md screens */}
+            <Row noGutters>
+                <MaskedImageBlock>
+                    <MaskedSurfingImageWrapper mediumScreen>
+                        <MaskedSurfingImage />
+                    </MaskedSurfingImageWrapper>
+                </MaskedImageBlock>
+                <Col>
+                    <QuoteText className="d-lg-none">a new adventure has started</QuoteText>
+                </Col>
+            </Row>
         </QuoteCol>
         <QuoteCol smallScreen xs="10" sm="8" className="d-md-none">
             {/* for xs and sm screens */}
