@@ -8,7 +8,7 @@ import Container from '@bootstrap-styled/v4/lib/Container'
 import Row from '@bootstrap-styled/v4/lib/Row'
 import Col from '@bootstrap-styled/v4/lib/Col'
 
-import ProfileImage from '../components/profile-image'
+import ProfileImage from '../images/profile-image'
 import Emoji from '../utils/emoji'
 
 

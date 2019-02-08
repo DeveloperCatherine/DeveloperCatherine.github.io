@@ -10,7 +10,7 @@ import Container from '@bootstrap-styled/v4/lib/Container'
 import Row from '@bootstrap-styled/v4/lib/Row'
 import Col from '@bootstrap-styled/v4/lib/Col'
 
-import ArrowImage from '../components/arrow-image'
+import ArrowImage from '../images/arrow-image'
 
 const ArrowImageWrapper = styled.div`
   margin: ${props => (props.noTopMargin ? '0 0 3rem' : '1.6875rem')};
@@ -45,7 +45,7 @@ const Transit = () => (
         <TransitText>
           <b>Sounds a bit confusing?</b>
           <br />
-          Let me tell you how I fit those roles.
+          Let me tell you more.
         </TransitText>
       </Col>
       <Col className="d-md-none">
