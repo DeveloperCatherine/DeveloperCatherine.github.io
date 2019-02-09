@@ -10,27 +10,24 @@ import PropTypes from 'prop-types'
 import Row from '@bootstrap-styled/v4/lib/Row'
 import Col from '@bootstrap-styled/v4/lib/Col'
 
-const TimelineRow = styled(Row)`
-    padding: 0 calc(9rem / 16);
-`;
-
 const TimeNavCol = styled(Col)`
-    padding-left: 1rem;    
     border-left: 1px solid black;
 `;
 
 const YearItem = styled.div`
-
+    margin-left: calc(5rem / 16);
+    margin-top: calc(13rem / 16);
 `;
 
 const Year = styled.p`
     writing-mode: sideways-lr;
     text-orientation: mixed;
-    text-algin: center;
+    color: #999999;
 `;
 
 const EventCol = styled(Col)`
-    margin-top: 3.375rem;
+    margin-top: 2.26rem;
+    border-bottom: 1px solid black;
 `;
 
 const TitleBlock = styled.div`
@@ -50,11 +47,8 @@ const Subtitle = styled.h3`
     margin-bottom: calc(13rem / 16);
 `;
 
-const Description = styled.p`
-`;
-
 const Timeline = ({odd, year, yearRange, title, description}) => (
-    <TimelineRow noGutters>
+    <Row noGutters>
         <TimeNavCol xs="1" className="order-first d-none d-md-block">
             <YearItem>
                 <Year>{year}</Year>
@@ -62,7 +56,7 @@ const Timeline = ({odd, year, yearRange, title, description}) => (
         </TimeNavCol>
         <EventCol>
             <Row>
-                <Col xs="12" md="6" className={{odd} ? "order-0 order-md-1" : "order-0"}>
+                <Col xs="12" md="6" className={odd ? "order-0 order-md-1" : "order-0"}>
                     <TitleBlock>
                         <Subtitle>{yearRange}</Subtitle>
                         <Title>
@@ -70,14 +64,12 @@ const Timeline = ({odd, year, yearRange, title, description}) => (
                         </Title>
                     </TitleBlock>
                 </Col>
-                <Col xs="12" md="6" className={{odd} ? "order-1 order-md-0" : "order-1"}>
-                    <Description>
-                        {description}
-                    </Description>
+                <Col xs="12" md="6" className={odd ? "order-1 order-md-0" : "order-1"}>
+                    <p>{description}</p>
                 </Col>
             </Row>
         </EventCol>
-    </TimelineRow>
+    </Row>
 )
 
 Timeline.propTypes = {

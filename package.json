@@ -5,6 +5,7 @@
   "author": "Yueying Catherine Tang <yueying.catherine@gmail.com>",
   "private": true,
   "dependencies": {
+    "@bootstrap-styled/provider": "^1.4.2",
     "@bootstrap-styled/v4": "^2.0.17",
     "babel-plugin-styled-components": "^1.10.0",
     "gatsby": "^2.0.88",

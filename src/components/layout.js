@@ -4,7 +4,7 @@ import { StaticQuery, graphql } from 'gatsby'
 import styled from 'styled-components'
 
 import Header from './header'
-import './bootstrap-grid.css'
+import './layout.css'
 
 const LargeScreenWidth = '992px';
 // const MediumScreenWidth = '768px';

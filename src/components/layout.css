@@ -1,9 +1,7 @@
 /*!
- * Bootstrap Grid v4.2.1 (https://getbootstrap.com/)
- * Copyright 2011-2018 The Bootstrap Authors
- * Copyright 2011-2018 Twitter, Inc.
- * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
+ * Bootstrap v4.2.1 (https://getbootstrap.com/)
  */
+
 html {
   box-sizing: border-box;
   -ms-overflow-style: scrollbar;
@@ -3717,3 +3715,20 @@ html {
   }
 }
 /*# sourceMappingURL=bootstrap-grid.css.map */
+
+.collapse:not(.show) {
+  display: none;
+}
+
+.collapsing {
+  position: relative;
+  height: 0;
+  overflow: hidden;
+  transition: height 0.35s ease;
+}
+
+@media screen and (prefers-reduced-motion: reduce) {
+  .collapsing {
+    transition: none;
+  }
+}
