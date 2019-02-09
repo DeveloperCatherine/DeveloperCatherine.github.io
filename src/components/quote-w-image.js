@@ -12,15 +12,21 @@ import Col from '@bootstrap-styled/v4/lib/Col'
 import SurfingImage from '../images/surfing-image'
 import MaskedSurfingImage from '../images/surfing-masked-image'
 
+const QuoteWithImageRow = styled(Row)`
+    margin-bottom: 1rem;
+`;
+
 const QuoteText = styled.h1`
-  font-size: ${props => (props.largeScreen ? '3.375rem' : '2.5rem')};
-  margin: ${props => (props.largeScreen ? '1.6875rem 3.375rem 2.5rem' : '1.5rem 2.25rem 2rem')};
+  ${props => (props.largeScreen ? 'font-size: 3.375rem;' : 'font-size: 2.5rem;')}
+  ${props => (props.largeScreen ? 'margin: 1.6875rem 3.375rem 2.5rem;' : 'margin: 1.5rem 2.25rem 2rem;')}
+  ${props => (props.smallScreen ? 'margin: 1.5rem 2.25rem 2rem;' : 'margin: 1.5rem 2.25rem 2rem;')}
   color: #FFFFFF;
   line-height: 1.3;
+  ${props => (props.smallScreen ? 'width: 15rem;' : '')}
 `;
 
 const QuoteCol = styled(Col)`
-    background-color: #FE840E;
+    ${props => (props.smallScreen ? '' : 'background-color: #FE840E;')}
     margin: ${props => (props.smallScreen ? '0' : '0 0 0 -100%')};
     min-width: ${props => (props.largeScreen ? '436px' : '19.25rem')};
 `;
@@ -29,12 +35,14 @@ const MaskedImageBlock = styled.div`
     position: absolute;
     overflow: hidden;
     height: 100%;
-    width: 40%;
-    margin-left: 60%;
+    width: ${props => (props.smallScreen ? '100%' : '40%')};
+    margin-left: ${props => (props.smallScreen ? '0' : '60%')};
 `;
 
 const MaskedImageWrapper = styled.div`
-    margin-top: ${props => (props.mediumScreen ? '-25%' : '-26%')};
+    ${props => (props.largeScreen ? "margin-top: -29%; width: 350%;" : "")}
+    ${props => (props.mediumScreen ? "margin-top: -25%; width: 350%;" : "")}
+    ${props => (props.smallScreen ? "min-width: 446px;" : "")}
 `;
 
 const ImageWrapper = styled.div`
@@ -43,7 +51,7 @@ const ImageWrapper = styled.div`
 `;
 
 const QuoteWithImage = ({ text }) => (
-<Row className="align-items-center justify-content-center justify-content-md-start" noGutters>
+<QuoteWithImageRow className="align-items-center justify-content-center justify-content-md-start" noGutters>
     <Col className="d-none d-md-block">
         {/* image hidden in xs and sm screens */}
         <ImageWrapper>
@@ -54,7 +62,7 @@ const QuoteWithImage = ({ text }) => (
         {/* for lg and xl screens */}
         <Row noGutters>
             <MaskedImageBlock>
-                <MaskedImageWrapper>
+                <MaskedImageWrapper largeScreen>
                     <MaskedSurfingImage />
                 </MaskedImageWrapper>
             </MaskedImageBlock>
@@ -76,11 +84,20 @@ const QuoteWithImage = ({ text }) => (
             </Col>
         </Row>
     </QuoteCol>
-    <QuoteCol smallScreen xs="10" sm="8" className="d-md-none">
+    <QuoteCol smallScreen xs="12" className="d-md-none">
         {/* for xs and sm screens */}
-        <QuoteText>{text}</QuoteText>
+        <Row noGutters>
+            <MaskedImageBlock smallScreen>
+                <MaskedImageWrapper smallScreen>
+                    <MaskedSurfingImage />
+                </MaskedImageWrapper>
+            </MaskedImageBlock>
+            <Col>
+                <QuoteText smallScreen>a new adventure has started</QuoteText>
+            </Col>
+        </Row>
     </QuoteCol>
-</Row>
+</QuoteWithImageRow>
 )
 
 export default QuoteWithImage

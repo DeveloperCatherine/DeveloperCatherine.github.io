@@ -34,9 +34,10 @@ const Button = styled.button`
   }
 `;
 
+const MediumScreenWidth = '768px';
 const AllEventsButtonRow = styled(Row)`
   padding: 2rem;
-  @media (min-width: 768px) {
+  @media (min-width: ${MediumScreenWidth}) {
     border-left: 1px solid black;
   }
 `;
