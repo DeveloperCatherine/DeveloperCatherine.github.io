@@ -14,15 +14,12 @@ const TimeNavCol = styled(Col)`
     border-left: 1px solid black;
 `;
 
-const YearItem = styled.div`
-    margin-left: calc(5rem / 16);
-    margin-top: calc(13rem / 16);
-`;
-
 const Year = styled.p`
-    writing-mode: sideways-lr;
-    text-orientation: mixed;
+    transform: rotate(-90deg);
+    transform-origin: left top;
     color: #999999;
+    margin-left: calc(5rem / 16);
+    margin-top: calc(17rem / 16);
 `;
 
 const EventCol = styled(Col)`
@@ -50,9 +47,7 @@ const Subtitle = styled.h3`
 const Timeline = ({odd, year, yearRange, title, description}) => (
     <Row noGutters>
         <TimeNavCol xs="1" className="order-first d-none d-md-block">
-            <YearItem>
-                <Year>{year}</Year>
-            </YearItem>
+            <Year>{year}</Year>
         </TimeNavCol>
         <EventCol>
             <Row>
