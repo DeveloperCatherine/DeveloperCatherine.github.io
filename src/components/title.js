@@ -24,7 +24,7 @@ const LargeNumber = styled.span`
 const H1 = styled.h1`
   display: flex;
   justify-content: center;
-  margin: 2rem 0 2rem 4rem;
+  margin: 2rem 0 2rem 4.4rem;
 `;
 
 
