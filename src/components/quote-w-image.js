@@ -42,7 +42,7 @@ const MaskedImageBlock = styled.div`
 const MaskedImageWrapper = styled.div`
     ${props => (props.largeScreen ? "margin-top: -29%; width: 350%;" : "")}
     ${props => (props.mediumScreen ? "margin-top: -25%; width: 350%;" : "")}
-    ${props => (props.smallScreen ? "min-width: 446px;" : "")}
+    ${props => (props.smallScreen ? "min-width: 446px; width: 100%;" : "")}
 `;
 
 const ImageWrapper = styled.div`
@@ -87,7 +87,7 @@ const QuoteWithImage = ({ text }) => (
     <QuoteCol smallScreen xs="12" className="d-md-none">
         {/* for xs and sm screens */}
         <Row noGutters>
-            <MaskedImageBlock smallScreen>
+            <MaskedImageBlock smallScreen className="d-flex align-items-center">
                 <MaskedImageWrapper smallScreen>
                     <MaskedSurfingImage />
                 </MaskedImageWrapper>
