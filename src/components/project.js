@@ -11,19 +11,20 @@ import Col from '@bootstrap-styled/v4/lib/Col'
 
 const ProjectCol = styled(Col)`
     margin-top: 2.26rem;
-    border-bottom: 1px solid black;
 `;
 
 const Title = styled.h3`
+    font-size: 1rem;
     margin: 0;
     line-height: 1.3;
     text-transform: uppercase;
 `;
 
 const Subtitle = styled.p`
-    letter-spacing: 0.05rem;
+    font-size: 0.8125rem;
+    letter-spacing: 0.04rem;
     margin: 0;
-    color: #666666;
+    color: #333333;
     margin-bottom: calc(13rem / 16);
 `;
 
@@ -32,7 +33,7 @@ const TitleBlock = styled.div`
 
 
 const Project = ({title, subtitle}) => (
-    <ProjectCol>
+    <ProjectCol xs="12" sm="6" md="4" className="d-flex justify-content-center">
         <TitleBlock>
             <Title>
                 {title}

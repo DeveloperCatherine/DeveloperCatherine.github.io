@@ -5,7 +5,7 @@
 
 import React from 'react'
 import {ScreenClassRender} from 'react-grid-system'
-// import styled from 'styled-components'
+import styled from 'styled-components'
 
 import Container from '@bootstrap-styled/v4/lib/Container'
 import Row from '@bootstrap-styled/v4/lib/Row'
@@ -15,6 +15,10 @@ import Col from '@bootstrap-styled/v4/lib/Col'
 import Emoji from '../utils/emoji'
 import Title from '../components/title'
 import Project from '../components/project'
+
+const ProjectsRow = styled(Row)`
+    border-bottom: 1px solid black;
+`;
 
 class Work extends React.Component {
   constructor(props) {
@@ -34,9 +38,14 @@ class Work extends React.Component {
     return (
       <Container id="work">
         <Title number="02" text="projects" />
-        <Row>
+        <ProjectsRow noGutters>
+            <Project title="Distraction-free coding" subtitle="Coding Tool Contextual Design" />
             <Project title="Project Name" subtitle="Project Subtitle" />
-        </Row>
+            <Project title="Project Name" subtitle="Project Subtitle" />
+            <Project title="Project Name" subtitle="Project Subtitle" />
+            <Project title="Project Name" subtitle="Project Subtitle" />
+            <Project title="Project Name" subtitle="Project Subtitle" />
+        </ProjectsRow>
         <Row>
           <Col md="12">
             <div style={{
