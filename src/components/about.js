@@ -4,7 +4,6 @@
  */
 
 import React from 'react'
-import {ScreenClassRender} from 'react-grid-system'
 import styled from 'styled-components'
 
 import Container from '@bootstrap-styled/v4/lib/Container'
@@ -12,7 +11,6 @@ import Row from '@bootstrap-styled/v4/lib/Row'
 import Col from '@bootstrap-styled/v4/lib/Col'
 import Collapse from '@bootstrap-styled/v4/lib/Collapse';
 
-import Emoji from '../utils/emoji'
 import QuoteWithImage from '../components/quote-w-image'
 import Title from '../components/title'
 import Timeline from '../components/timeline'
@@ -89,21 +87,6 @@ class About extends React.Component {
             <Button onClick={() => this.toggleCollapse()}>{this.state.isOpen ? "show less" : "show all"}</Button>
           </Col>
         </AllEventsButtonRow>
-        <Row>
-          <Col md="12">
-            <div style={{
-              textAlign: "center"
-            }}>
-              <h1>stay tunned</h1>
-              <p>This project is not finished yet. Feel free to check its repo <Emoji symbol="👇" label="point-down" /> for more details :)</p>
-            </div>
-          </Col>
-        </Row>
-        <ScreenClassRender render={screenClass => (
-            <p style={{ fontSize: ['lg', 'xl'].includes(screenClass) ? '2rem' : '1rem' }} >
-              Screen class: {screenClass}
-            </p>
-        )} />
       </Container>
     )
   }

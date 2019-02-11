@@ -1,5 +1,5 @@
 /**
- * The Timeline Component
+ * The Timeline Item Component
  * 
  */
 

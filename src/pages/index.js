@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import Intro from '../components/intro'
 import Transit from '../components/transit'
 import About from '../components/about'
+import Work from '../components/work'
 import SEO from '../components/seo'
 
 
@@ -18,6 +19,7 @@ const IndexPage = () => (
     <Intro />
     <Transit />
     <About />
+    <Work />
   </Layout>
 )
 
