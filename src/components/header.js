@@ -66,7 +66,7 @@ const Header = () => (
     <SiteNav>
       <NavList>
         <NavButton><NavLink to="/#about">About</NavLink></NavButton>
-        <NavButton><NavLink to="/#projects">Work</NavLink></NavButton>
+        <NavButton><NavLink to="/#work">Work</NavLink></NavButton>
         <NavButton><NavLink to="/#contact">Contact</NavLink></NavButton>
       </NavList>
     </SiteNav>
