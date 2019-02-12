@@ -14,25 +14,29 @@ const TitleRow = styled(Row)`
   padding-bottom: 1.6875rem
 `;
 
+const NumberCol = styled(Col)`
+  margin-right: -3.375rem;
+`;
+
 const LargeNumber = styled.span`
   font-size: 5rem;
   color: #E5E5E5;
-  position: absolute;
-  padding-right: 5.4rem;
+  text-align: right;
 `;
 
 const H1 = styled.h1`
-  display: flex;
-  justify-content: center;
-  margin: 2rem 0 2rem 4.4rem;
+  text-align: left;
+  margin: 0;
 `;
 
 
 const Title = ({ number, text }) => (
-<TitleRow className="align-items-center justify-content-center">
-    <LargeNumber>{number}.</LargeNumber>
-    <Col>
-    <H1>{text}</H1>
+<TitleRow noGutters className="align-items-center justify-content-center">
+    <NumberCol xs="5" md="4" className="d-flex justify-content-end">
+      <LargeNumber>{number}.</LargeNumber>
+    </NumberCol>
+    <Col xs="7" md="5">
+      <H1>{text}</H1>
     </Col>
 </TitleRow>
 )
