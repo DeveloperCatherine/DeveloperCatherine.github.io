@@ -11,7 +11,7 @@ import Col from '@bootstrap-styled/v4/lib/Col'
 
 const TitleRow = styled(Row)`
   padding-top: 3.375rem;
-  padding-bottom: 1.6875rem
+  padding-bottom: 0.5625rem;
 `;
 
 const NumberCol = styled(Col)`
