@@ -47,7 +47,7 @@ const Contact = () => (
           <Email>yueying.catherine@gmail.com</Email>
         </ContactCol>
         <ContactCol xs="12" md="5">
-          <Heading>more on</Heading>
+          <Heading>find me on</Heading>
           <ExternalLinkList>
             <ExternalLink><a href="https://www.instagram.com/yueying.catherine/">Instagram</a></ExternalLink>
             <ExternalLink><a href="http://linkedin.com/in/yueyingtang">LinkedIn</a></ExternalLink>
