@@ -20,7 +20,7 @@ const ProjectCardLink = styled(Link)`
     max-width: 280px;
     overflow: hidden;
     text-align: center;
-    margin-bottom: 2.25rem;
+    margin-bottom: calc(36rem / 16);
 `;
 
 const ImageWrapper = styled.div`
@@ -43,7 +43,8 @@ const Subtitle = styled.p`
 `;
 
 const TitleBlock = styled.div`
-    margin-top: calc(13rem / 16);
+    margin-top: calc(17rem / 16);
+    padding: 0 calc(9rem / 16);
 `;
 
 const Project = ({title, subtitle}) => (
