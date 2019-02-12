@@ -17,7 +17,7 @@ import Title from '../components/title'
 import Project from '../components/project'
 
 const ProjectsRow = styled(Row)`
-    border-bottom: 1px solid black;
+    // border-bottom: 1px solid black;
 `;
 
 class Work extends React.Component {
@@ -38,10 +38,10 @@ class Work extends React.Component {
     return (
       <Container id="work">
         <Title number="02" text="projects" />
-        <ProjectsRow noGutters>
+        <ProjectsRow className="justify-content-center">
             <Project title="Distraction-free coding" subtitle="Coding Tool Contextual Design" />
-            <Project title="Project Name" subtitle="Project Subtitle" />
-            <Project title="Project Name" subtitle="Project Subtitle" />
+            <Project title="Cancer survivors network" subtitle="Social Forum Redesign" />
+            <Project title="P1" subtitle="Mobile Photo-sharing Service User Research" />
             <Project title="Project Name" subtitle="Project Subtitle" />
             <Project title="Project Name" subtitle="Project Subtitle" />
             <Project title="Project Name" subtitle="Project Subtitle" />
