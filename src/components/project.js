@@ -21,6 +21,12 @@ const ProjectCardLink = styled(Link)`
     overflow: hidden;
     text-align: center;
     margin-bottom: calc(36rem / 16);
+    &:hover {
+        -webkit-transition: .25s ease-out;
+        -o-transition: .25s ease-out;
+        transition: .25s ease-out;
+        box-shadow: 5px 5px 10px #666666;
+    }
 `;
 
 const ImageWrapper = styled.div`
@@ -43,8 +49,10 @@ const Subtitle = styled.p`
 `;
 
 const TitleBlock = styled.div`
-    margin-top: calc(17rem / 16);
-    padding: 0 calc(9rem / 16);
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    border-bottom: 1px solid black;
+    padding: calc(17rem / 16) calc(9rem / 16) calc(19rem / 16);
 `;
 
 const Project = ({title, subtitle}) => (
