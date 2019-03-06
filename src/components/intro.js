@@ -106,7 +106,7 @@ const Intro = () => (
           <RoleListBgTop className="d-none d-lg-block"/>
           <Col xs="12" md="7" lg="6">
             <RoleList>
-              <RoleItem inactive>UX Designer</RoleItem>
+              <RoleItem inactive>Design Lover</RoleItem>
               <RoleItem>Product Maker</RoleItem>
               <RoleItem inactive>Windsurfer</RoleItem>
             </RoleList>

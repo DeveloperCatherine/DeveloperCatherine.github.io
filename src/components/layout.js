@@ -29,12 +29,12 @@ const ContentWrapper = styled.div`
 
 const Footer = styled.footer`
   border-top: 1px solid black;
-  padding-top: 0.5rem;
-  text-align: center;
+  padding-top: 1rem;
 `;
 
 const Copyright = styled.div`
   color: #333333;
+  text-align: center;
 `;
 
 const TextLink = styled.a`
