@@ -35,7 +35,7 @@ class Work extends React.Component {
   render() {
     return (
       <Container id="work">
-        <Title number="02" text="my work" />
+        <Title number="01" text="my work" />
         <ProjectsRow className="justify-content-center">
             <Project title="Distraction-free coding" subtitle="Coding Tool Contextual Design" />
             <Project title="Cancer survivors network" subtitle="Social Forum Redesign" />

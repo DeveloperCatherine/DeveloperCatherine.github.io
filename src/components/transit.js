@@ -27,10 +27,14 @@ const TransitRow = styled(Row)`
   border-top: 1px solid black;
 `;
 
-const TransitText = styled.div`
+const TransitText = styled.p`
   padding: 1.6875rem 0;
   text-align: center;
   line-height: 2.0675rem;
+  font-size: 1.125rem;
+  font-weight: bold;
+  letter-spacing: 0.03rem;
+  margin: 0;
 `;
 
 const Transit = () => (
@@ -41,11 +45,9 @@ const Transit = () => (
           <ArrowImage />
         </ArrowImageWrapper>
       </TransitCol>
-      <Col xs="12" md="8">
+      <Col xs="12" md="9" lg="8">
         <TransitText>
-          <b>Sounds a bit confusing?</b>
-          <br />
-          Let me tell you more.
+          I strive to identify the right problems<br />and make impact.
         </TransitText>
       </Col>
       <Col className="d-md-none">

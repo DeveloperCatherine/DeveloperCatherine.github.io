@@ -21,7 +21,7 @@ const IntroGreeting = styled.div`
 `;
 
 const LargeText = styled.p`
-    font-size: 1.6875rem;
+    font-size: 1.5rem;
     margin: 0 15px calc(1.6875rem / 2);
     letter-spacing: 0.05rem;
     text-align: center;
@@ -34,7 +34,7 @@ const RoleList = styled.ul`
 `;
 
 const RoleItem = styled.li`
-    font-size: ${props => (props.inactive ? '1.2rem' : '1.6875rem')};
+    font-size: ${props => (props.inactive ? '1.125rem' : '1.6875rem')};
     text-align: center;
     font-weight: bold;
     letter-spacing: 0.05rem;
@@ -84,8 +84,8 @@ const Intro = () => (
     <Row className="align-items-center">
       <Col>
         <IntroGreeting>
-          <h1><Emoji symbol="👋" label="Hi" /> good <DayPart hour={new Date().getHours()}/>.</h1>
-          <p>This is my portfolio, an ongoing project that I recently started working on.</p>
+          <h1><Emoji symbol="👋" label="Hi" /> good <DayPart hour={new Date().getHours()}/></h1>
+          {/* <p>Here is where I keep my work, stories, and things I do to spice up my life.</p> */}
         </IntroGreeting>
       </Col>
     </Row>
@@ -108,7 +108,7 @@ const Intro = () => (
             <RoleList>
               <RoleItem inactive>UX Designer</RoleItem>
               <RoleItem>Product Maker</RoleItem>
-              <RoleItem inactive>Web Developer</RoleItem>
+              <RoleItem inactive>Windsurfer</RoleItem>
             </RoleList>
           </Col>
           <Col md="5" lg="4">
