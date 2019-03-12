@@ -35,7 +35,7 @@ const RoleList = styled.ul`
 `;
 
 const RoleItem = styled.li`
-  font-size: ${props => (props.inactive ? '1.125rem' : '1.6875rem')};
+  font-size: ${props => (props.inactive ? '1.25rem' : '1.6875rem')};
   text-align: center;
   font-weight: bold;
   letter-spacing: 0.05rem;
