@@ -13,51 +13,52 @@ import Emoji from '../utils/emoji'
 
 
 const IntroContainer = styled(Container)`
-    margin-bottom: calc(1.6875rem * 2 - 1rem);
+  margin-bottom: calc(1.6875rem * 2 - 1rem);
 `;
 
-const IntroGreeting = styled.div`
-    text-align: center;
+const IntroGreeting = styled.h1`
+  text-align: center;
+  font-size: 2.25rem;
 `;
 
 const LargeText = styled.p`
-    font-size: 1.5rem;
-    margin: 0 15px calc(1.6875rem / 2);
-    letter-spacing: 0.05rem;
-    text-align: center;
+  font-size: 1.5rem;
+  margin: 0 15px calc(1.6875rem / 2);
+  letter-spacing: 0.05rem;
+  text-align: center;
 `;
 
 const RoleList = styled.ul`
-    list-style: none;
-    margin: 0;
-    padding: 1.6875rem 0;
+  list-style: none;
+  margin: 0;
+  padding: 1.6875rem 0;
 `;
 
 const RoleItem = styled.li`
-    font-size: ${props => (props.inactive ? '1.125rem' : '1.6875rem')};
-    text-align: center;
-    font-weight: bold;
-    letter-spacing: 0.05rem;
-    ${props => (props.inactive ? '' : 'text-decoration: rgba(255, 255, 255, 0.45) double underline;')}
-    color: ${props => (props.inactive ? 'rgba(255, 255, 255, 0.8)' : '#FFFFFF')};
+  font-size: ${props => (props.inactive ? '1.125rem' : '1.6875rem')};
+  text-align: center;
+  font-weight: bold;
+  letter-spacing: 0.05rem;
+  ${props => (props.inactive ? '' : 'text-decoration: rgba(255, 255, 255, 0.45) double underline;')}
+  color: ${props => (props.inactive ? 'rgba(255, 255, 255, 0.8)' : '#FFFFFF')};
 `;
 
 const RoleListBgBottom = styled.div`
-    background-color: #FEB30E;    
-    position: absolute;
-    left: 0.6rem;
-    top:  ${props => (props.smallScreens ? '0.6rem' : '2.25rem')};
-    height: ${props => (props.smallScreens ? '100%' : '80%')};
-    width: ${props => ((props.mediumScreens || props.smallScreens) ? '97%' : '85%')};
+  background-color: #FEB30E;    
+  position: absolute;
+  left: 0.6rem;
+  top:  ${props => (props.smallScreens ? '0.6rem' : '2.25rem')};
+  height: ${props => (props.smallScreens ? '100%' : '80%')};
+  width: ${props => ((props.mediumScreens || props.smallScreens) ? '97%' : '85%')};
 `;
 
 const RoleListBgTop = styled.div`
-    background-color: #FE840E;    
-    position: absolute;
-    left: 0;
-    top:  ${props => (props.smallScreens ? '0' : '1.65rem')};
-    height: ${props => (props.smallScreens ? '100%' : '80%')};
-    width: ${props => ((props.mediumScreens || props.smallScreens) ? '97%' : '85%')};
+  background-color: #FE840E;    
+  position: absolute;
+  left: 0;
+  top:  ${props => (props.smallScreens ? '0' : '1.65rem')};
+  height: ${props => (props.smallScreens ? '100%' : '80%')};
+  width: ${props => ((props.mediumScreens || props.smallScreens) ? '97%' : '85%')};
 `;
 
 const ProfileImageWrapper = styled.span`
@@ -84,9 +85,9 @@ const Intro = () => (
     <Row className="align-items-center">
       <Col>
         <IntroGreeting>
-          <h1><Emoji symbol="👋" label="Hi" /> good <DayPart hour={new Date().getHours()}/></h1>
-          {/* <p>Here is where I keep my work, stories, and things I do to spice up my life.</p> */}
+          <Emoji symbol="👋" label="Hi" /> good <DayPart hour={new Date().getHours()}/>
         </IntroGreeting>
+        {/* <p>Here is where I keep my work, stories, and things I do to spice up my life.</p> */}
       </Col>
     </Row>
     <Row className="align-items-center">
